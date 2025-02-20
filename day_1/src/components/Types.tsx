@@ -1,6 +1,7 @@
 export type TasksList = {
     id:number,
     tasks:string,
+    desc: string,
     status:boolean
 }
 

@@ -6,6 +6,7 @@ const ToDo: React.FC<TaskProps> = ({ tasks, handleDelete, handleComplete }) => {
       <div key={task.id}>
         <hr />
         <p>Task: {task.tasks}</p>
+        <p>Desc: {task.desc}</p>
         <p>Status: {task.status ? "Completed" : "Not Completed"}</p>
 
         <button className="success-button" onClick={() => handleComplete(task.id)}>Complete</button>

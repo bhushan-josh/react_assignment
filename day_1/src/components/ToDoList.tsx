@@ -5,12 +5,14 @@ import "./ToDo.css";
 
 const ToDoList: React.FC = () => {
   const [input, setInput] = useState<string>("");
+  const [desc, setDesc] = useState<string>("");
   const [tasks, setTasks] = useState<Array<TasksList>>([]);
 
   const handleSubmit = () => {
     if (input.trim() !== "") {
-      setTasks([...tasks, { id: Date.now(), tasks: input, status: false }]);
+      setTasks([...tasks, { id: Date.now(), tasks: input, desc: desc, status: false }]);
       setInput("");
+      setDesc("");
     }
   };
 
@@ -41,6 +43,13 @@ const ToDoList: React.FC = () => {
             value={input}
             placeholder="Enter a task"
             onChange={(event) => setInput(event.target.value)}
+          />
+           <input
+            className="input-field"
+            type="text"
+            value={desc}
+            placeholder="Enter a description"
+            onChange={(event) => setDesc(event.target.value)}
           />
           <button
             className="submit-button"
